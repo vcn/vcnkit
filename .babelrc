@@ -1,0 +1,28 @@
+{
+    "presets": [
+        [
+            "env",
+            {
+                "modules": false
+            }
+        ],
+        "react-app"
+    ],
+    "plugins": [
+        [
+            "babel-plugin-styled-components",
+            {
+                "minify": false,
+                "uglifyPure": false
+            }
+        ]
+    ],
+    "env": {
+        "production": {
+            "ignore": [
+                "**/*.test.js",
+                "**/*.spec.js"
+            ]
+        }
+    }
+}

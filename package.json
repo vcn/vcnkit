@@ -1,0 +1,60 @@
+{
+  "name": "vcnkit",
+  "private": true,
+  "author": "VCN Verzekerings Combinatie Nederland B.V.",
+  "maintainers": [
+    "Freek Post <fpost@vcn.nl>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vcn/vcnkit"
+  },
+  "bugs": "https://github.com/vcn/vcnkit/issues",
+  "engines": {
+    "node": ">8.0.0"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "scripts": {
+    "postinstall": "lerna bootstrap",
+    "lint": "eslint packages/*/src/**/*.js",
+    "prettier": "prettier --write 'packages/*/src/**/*.js'",
+    "test": "lerna run --parallel test",
+    "build": "cross-env BABEL_ENV=production lerna run --parallel build",
+    "clean": "lerna run --parallel clean && lerna clean --yes && rimraf node_modules",
+    "start": "start-storybook -p 9009",
+    "publish-packages": "lerna publish --independent"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.4.8",
+    "@storybook/addon-links": "^3.4.8",
+    "@storybook/addons": "^3.4.8",
+    "@storybook/react": "^3.4.8",
+    "@types/react": "^16.4.7",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-styled-components": "^1.5.1",
+    "babel-preset-react-app": "^3.1.2",
+    "babel-runtime": "^6.26.0",
+    "cross-env": "^5.2.0",
+    "eslint": "4.10.0",
+    "eslint-config-react-app": "^2.1.0",
+    "eslint-loader": "1.9.0",
+    "eslint-plugin-flowtype": "^2.50.0",
+    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-jsx-a11y": "5.1.1",
+    "eslint-plugin-react": "7.4.0",
+    "glob-loader": "^0.3.0",
+    "jest": "^23.4.2",
+    "jest-styled-components": "^5.0.1",
+    "lerna": "^3.0.0-rc.0",
+    "prettier": "1.14.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "rimraf": "^2.6.2",
+    "styled-components": "^3.3.3"
+  }
+}
