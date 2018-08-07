@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Provides body1 style correctly 1`] = `
+.c0 {
+  font-family: "Roboto",sans-serif;
+  font-weight: 400;
+  font-size: 0.8125rem;
+  line-height: 1.618;
+  color: hsla(0,0%,0%,0.87);
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Provides body2 style correctly 1`] = `
+.c0 {
+  font-family: "Roboto",sans-serif;
+  font-weight: 500;
+  font-size: 0.8125rem;
+  line-height: 1.618;
+  color: hsla(0,0%,0%,0.87);
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Provides caption style correctly 1`] = `
+.c0 {
+  font-family: "Roboto",sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.618;
+  color: hsla(0,0%,0%,0.87);
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Provides headline style correctly 1`] = `
+.c0 {
+  font-family: "Roboto",sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  color: hsla(0,0%,0%,0.87);
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Provides hero style correctly 1`] = `
+.c0 {
+  font-family: "Roboto",sans-serif;
+  font-weight: 400;
+  font-size: 2.125rem;
+  line-height: 1.4;
+  color: hsla(0,0%,0%,0.87);
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Provides subheading1 style correctly 1`] = `
+.c0 {
+  font-family: "Roboto",sans-serif;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  color: hsla(0,0%,0%,0.87);
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Provides subheading2 style correctly 1`] = `
+.c0 {
+  font-family: "Roboto",sans-serif;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  color: hsla(0,0%,0%,0.87);
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Provides title1 style correctly 1`] = `
+.c0 {
+  font-family: "Roboto",sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  color: hsla(0,0%,0%,0.87);
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Provides title2 style correctly 1`] = `
+.c0 {
+  font-family: "Roboto",sans-serif;
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  color: hsla(0,0%,0%,0.87);
+}
+
+<div
+  className="c0"
+/>
+`;

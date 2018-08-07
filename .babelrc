@@ -21,7 +21,8 @@
         "production": {
             "ignore": [
                 "**/*.test.js",
-                "**/*.spec.js"
+                "**/*.spec.js",
+                "**/*.snap"
             ]
         }
     }
