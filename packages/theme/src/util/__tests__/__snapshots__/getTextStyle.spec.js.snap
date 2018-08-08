@@ -1,12 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Provides body1 style correctly 1`] = `
+exports[`Provides the body-style correctly 1`] = `
 .c0 {
   font-family: "Roboto",sans-serif;
   font-weight: 400;
-  font-size: 0.8125rem;
-  line-height: 1.618;
+  font-size: 1.0625em;
+  line-height: 1.29411764;
+  -webkit-letter-spacing: -0.012em;
+  -moz-letter-spacing: -0.012em;
+  -ms-letter-spacing: -0.012em;
+  letter-spacing: -0.012em;
   color: hsla(0,0%,0%,0.87);
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 <div
@@ -14,13 +20,99 @@ exports[`Provides body1 style correctly 1`] = `
 />
 `;
 
-exports[`Provides body2 style correctly 1`] = `
+exports[`Provides the callout-style correctly 1`] = `
+.c0 {
+  font-family: "Roboto",sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 1.3125;
+  -webkit-letter-spacing: -0.01em;
+  -moz-letter-spacing: -0.01em;
+  -ms-letter-spacing: -0.01em;
+  letter-spacing: -0.01em;
+  color: hsla(0,0%,0%,0.87);
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Provides the caption1-style correctly 1`] = `
+.c0 {
+  font-family: "Roboto",sans-serif;
+  font-weight: 400;
+  font-size: 0.75em;
+  line-height: 1.33333333;
+  -webkit-letter-spacing: 0em;
+  -moz-letter-spacing: 0em;
+  -ms-letter-spacing: 0em;
+  letter-spacing: 0em;
+  color: hsla(0,0%,0%,0.87);
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Provides the caption2-style correctly 1`] = `
+.c0 {
+  font-family: "Roboto",sans-serif;
+  font-weight: 400;
+  font-size: 0.6875em;
+  line-height: 1.181818181818;
+  -webkit-letter-spacing: 0.003em;
+  -moz-letter-spacing: 0.003em;
+  -ms-letter-spacing: 0.003em;
+  letter-spacing: 0.003em;
+  color: hsla(0,0%,0%,0.87);
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Provides the footnote-style correctly 1`] = `
+.c0 {
+  font-family: "Roboto",sans-serif;
+  font-weight: 400;
+  font-size: 0.8125em;
+  line-height: 1.38461538;
+  -webkit-letter-spacing: -0.003em;
+  -moz-letter-spacing: -0.003em;
+  -ms-letter-spacing: -0.003em;
+  letter-spacing: -0.003em;
+  color: hsla(0,0%,0%,0.87);
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Provides the headline-style correctly 1`] = `
 .c0 {
   font-family: "Roboto",sans-serif;
   font-weight: 500;
-  font-size: 0.8125rem;
-  line-height: 1.618;
+  font-size: 1.0625em;
+  line-height: 1.29411764;
+  -webkit-letter-spacing: -0.014em;
+  -moz-letter-spacing: -0.014em;
+  -ms-letter-spacing: -0.014em;
+  letter-spacing: -0.014em;
   color: hsla(0,0%,0%,0.87);
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 <div
@@ -28,13 +120,19 @@ exports[`Provides body2 style correctly 1`] = `
 />
 `;
 
-exports[`Provides caption style correctly 1`] = `
+exports[`Provides the hero-style correctly 1`] = `
 .c0 {
   font-family: "Roboto",sans-serif;
   font-weight: 400;
-  font-size: 0.75rem;
-  line-height: 1.618;
+  font-size: 3em;
+  line-height: 1.04166666;
+  -webkit-letter-spacing: 0.003em;
+  -moz-letter-spacing: 0.003em;
+  -ms-letter-spacing: 0.003em;
+  letter-spacing: 0.003em;
   color: hsla(0,0%,0%,0.87);
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 <div
@@ -42,13 +140,19 @@ exports[`Provides caption style correctly 1`] = `
 />
 `;
 
-exports[`Provides headline style correctly 1`] = `
+exports[`Provides the overline-style correctly 1`] = `
 .c0 {
   font-family: "Roboto",sans-serif;
   font-weight: 400;
-  font-size: 1.5rem;
-  line-height: 1.4;
+  font-size: 0.6875em;
+  line-height: 1.63644;
+  -webkit-letter-spacing: 0.075em;
+  -moz-letter-spacing: 0.075em;
+  -ms-letter-spacing: 0.075em;
+  letter-spacing: 0.075em;
   color: hsla(0,0%,0%,0.87);
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 <div
@@ -56,13 +160,19 @@ exports[`Provides headline style correctly 1`] = `
 />
 `;
 
-exports[`Provides hero style correctly 1`] = `
+exports[`Provides the subhead-style correctly 1`] = `
 .c0 {
   font-family: "Roboto",sans-serif;
   font-weight: 400;
-  font-size: 2.125rem;
-  line-height: 1.4;
+  font-size: 0.9375em;
+  line-height: 1.33333333;
+  -webkit-letter-spacing: -0.008em;
+  -moz-letter-spacing: -0.008em;
+  -ms-letter-spacing: -0.008em;
+  letter-spacing: -0.008em;
   color: hsla(0,0%,0%,0.87);
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 <div
@@ -70,13 +180,19 @@ exports[`Provides hero style correctly 1`] = `
 />
 `;
 
-exports[`Provides subheading1 style correctly 1`] = `
+exports[`Provides the title1-style correctly 1`] = `
 .c0 {
   font-family: "Roboto",sans-serif;
   font-weight: 400;
-  font-size: 0.9375rem;
-  line-height: 1.4;
+  font-size: 2.125em;
+  line-height: 1.20588235;
+  -webkit-letter-spacing: 0.007em;
+  -moz-letter-spacing: 0.007em;
+  -ms-letter-spacing: 0.007em;
+  letter-spacing: 0.007em;
   color: hsla(0,0%,0%,0.87);
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 <div
@@ -84,27 +200,19 @@ exports[`Provides subheading1 style correctly 1`] = `
 />
 `;
 
-exports[`Provides subheading2 style correctly 1`] = `
-.c0 {
-  font-family: "Roboto",sans-serif;
-  font-weight: 500;
-  font-size: 0.9375rem;
-  line-height: 1.4;
-  color: hsla(0,0%,0%,0.87);
-}
-
-<div
-  className="c0"
-/>
-`;
-
-exports[`Provides title1 style correctly 1`] = `
+exports[`Provides the title2-style correctly 1`] = `
 .c0 {
   font-family: "Roboto",sans-serif;
   font-weight: 400;
-  font-size: 1.25rem;
-  line-height: 1.4;
+  font-size: 1.375em;
+  line-height: 1.21428571;
+  -webkit-letter-spacing: 0.008em;
+  -moz-letter-spacing: 0.008em;
+  -ms-letter-spacing: 0.008em;
+  letter-spacing: 0.008em;
   color: hsla(0,0%,0%,0.87);
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 <div
@@ -112,13 +220,19 @@ exports[`Provides title1 style correctly 1`] = `
 />
 `;
 
-exports[`Provides title2 style correctly 1`] = `
+exports[`Provides the title3-style correctly 1`] = `
 .c0 {
   font-family: "Roboto",sans-serif;
-  font-weight: 500;
-  font-size: 1.25rem;
-  line-height: 1.4;
+  font-weight: 400;
+  font-size: 1.25em;
+  line-height: 1.27272727;
+  -webkit-letter-spacing: 0.01em;
+  -moz-letter-spacing: 0.01em;
+  -ms-letter-spacing: 0.01em;
+  letter-spacing: 0.01em;
   color: hsla(0,0%,0%,0.87);
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 <div

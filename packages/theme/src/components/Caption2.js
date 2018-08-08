@@ -2,6 +2,6 @@ import styled from 'styled-components';
 
 import { getTextStyle } from '../';
 
-export default styled.p`
-    ${getTextStyle('body2')};
+export default styled.span`
+    ${getTextStyle('caption2')};
 `;

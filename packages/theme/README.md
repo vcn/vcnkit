@@ -86,6 +86,7 @@ Returns a styled-components [css](https://www.styled-components.com/docs/api#css
 * `font-weight`
 * `font-size`
 * `line-height`
+* `line-height`
 * `color`
 
 ```jsx
@@ -93,25 +94,28 @@ import styled from 'styled-components';
 import { getTextStyle } from '@vcnkit/theme';
 
 const SomeParagraph = styled.p`
-    ${ getTextStyle('body1') }
+    ${ getTextStyle('body') }
 `;
 
 const SomeComponent = () => (
-    <SomeParagraph>This is the body1 style.</SomeParagraph>
+    <SomeParagraph>This is the body style.</SomeParagraph>
 );
 ```
 
 Valid types are:
 
 * `hero`
-* `headline`
-* `title2`
 * `title1`
-* `subheading2`
-* `subheading1`
-* `body2`
-* `body1`
-* `caption`
+* `title2`
+* `title3`
+* `headline`
+* `body`
+* `callout`
+* `subhead`
+* `footnote`
+* `caption1`
+* `caption2`
+* `overline`
 
 ### getTextColor(?object: props)
 
@@ -207,10 +211,10 @@ import { ThemeProvider } from '@vcnkit/theme';
 const App = () => (
     <ThemeProvider
         fonts={ {
-            body1Family:     'Arial, sans-serif',
-            body1Weight:     400,
-            body1Size:       1,
-            body1LineHeight: 1.25,
+            bodyFamily:     'Arial, sans-serif',
+            bodyWeight:     400,
+            bodySize:       1,
+            bodyLineHeight: 1.25,
         } }
     >
         ...
@@ -223,25 +227,32 @@ const App = () => (
 Some default components are provided to help with typography:
 
 * `Hero`
-* `Headline`
-* `Title2`
 * `Title1`
-* `Subheading2`
-* `Subheading1`
-* `Body2`
-* `Body1`
-* `Caption`
+* `Title2`
+* `Title3`
+* `Headline`
+* `Body`
+* `Callout`
+* `Subhead`
+* `Footnote`
+* `Caption1`
+* `Caption2`
+* `Overline`
+
+And a `Text`-container to provide margins for readability.
 
 ```jsx
-import { Title1, Body2 } from '@vcnkit/theme';
+import { Text, Hero, Body } from '@vcnkit/theme';
 
 const SomeComponent = () => (
-    <div>
-        <Title1>This is a title</Title1>
-        <Body2>Body text is contained in either a Body2 or Body1</Body2>
-    </div>
+    <Text maxWidth>
+        <Title>This is a title</Title>
+        <Body>Body text</Body>
+    </Text>
 )
 ```
+
+The `maxWidth`-prop for `Text` limits the width to `72ch`.
 
 #### Using a different tag for a component
 
@@ -262,14 +273,14 @@ const SomeComponent = () => (
 All the provided components come in various styles which will be determined by passing the correct props.
 
 ```jsx
-import { Body2, Caption } from '@vcnkit/theme';
+import { Body, Caption1 } from '@vcnkit/theme';
 
 const SomeComponent = () => (
     <div>
-        <Body2>This text will show in the default, primary, style.</Body2>
-        <Body2 secondary>This will show in the secondary style instead.</Body2>
-        <Caption hint>A caption with the hint style</Caption>
-        <Caption disabled>A caption with the disabled style</Caption>
+        <Body>This text will show in the default, primary, style.</Body>
+        <Body secondary>This will show in the secondary style instead.</Body>
+        <Caption1 hint>A caption with the hint style</Caption1>
+        <Caption1 disabled>A caption with the disabled style</Caption1>
     </div>
 );
 ```

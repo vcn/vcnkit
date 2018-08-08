@@ -7,11 +7,19 @@ function getTextStyle(type, props) {
     const fonts = getThemeOrDefault('fonts', props);
 
     return `
-        font-family: ${fonts[`${type}Family`]};
-        font-weight: ${fonts[`${type}Weight`]};
-        font-size:   ${fonts[`${type}Size`]}rem;
-        line-height: ${fonts[`${type}LineHeight`]};
-        color:       ${getTextColor(props)}; 
+        font-family:    ${fonts[`${type}Family`]};
+        font-weight:    ${fonts[`${type}Weight`]};
+        font-size:      ${fonts[`${type}Size`]}em;
+        line-height:    ${fonts[`${type}LineHeight`]};
+        letter-spacing: ${fonts[`${type}LetterSpacing`]}em;
+        color:          ${getTextColor(props)};
+
+        ${props &&
+            !props.spacing &&
+            `
+            margin-bottom: 0;
+            margin-top:    0;
+        `}
     `;
 }
 

@@ -10,21 +10,21 @@ storiesOf('ExpansionPanel', module)
     .add('Controlled by state', () => (
         <div>
             <ExpansionPanel.Panel>
-                <ExpansionPanel.Header>Test</ExpansionPanel.Header>
+                <ExpansionPanel.Header>Preferences</ExpansionPanel.Header>
                 <ExpansionPanel.Content>
-                    <div style={{ height: '300px' }}>Test</div>
+                    <div style={{ height: '300px' }}>Preferences</div>
                 </ExpansionPanel.Content>
             </ExpansionPanel.Panel>
             <ExpansionPanel.Panel>
-                <ExpansionPanel.Header>Test</ExpansionPanel.Header>
+                <ExpansionPanel.Header>E-mail settings</ExpansionPanel.Header>
                 <ExpansionPanel.Content>
-                    <div style={{ height: '200px' }}>Test</div>
+                    <div style={{ height: '200px' }}>E-mail settings</div>
                 </ExpansionPanel.Content>
             </ExpansionPanel.Panel>
             <ExpansionPanel.Panel>
-                <ExpansionPanel.Header>Test</ExpansionPanel.Header>
+                <ExpansionPanel.Header>General</ExpansionPanel.Header>
                 <ExpansionPanel.Content>
-                    <div style={{ height: '100px' }}>Test</div>
+                    <div style={{ height: '100px' }}>General</div>
                 </ExpansionPanel.Content>
             </ExpansionPanel.Panel>
         </div>
@@ -34,21 +34,21 @@ storiesOf('ExpansionPanel', module)
             {(expanded, toggle) => (
                 <React.Fragment>
                     <ExpansionPanel.Panel expanded={expanded === 'first'} onChange={() => toggle('first')}>
-                        <ExpansionPanel.Header>Test</ExpansionPanel.Header>
+                        <ExpansionPanel.Header>Preferences</ExpansionPanel.Header>
                         <ExpansionPanel.Content>
-                            <div style={{ height: '300px' }}>Test</div>
+                            <div style={{ height: '300px' }}>Preferences</div>
                         </ExpansionPanel.Content>
                     </ExpansionPanel.Panel>
                     <ExpansionPanel.Panel expanded={expanded === 'second'} onChange={() => toggle('second')}>
-                        <ExpansionPanel.Header>Test</ExpansionPanel.Header>
+                        <ExpansionPanel.Header>E-mail settings</ExpansionPanel.Header>
                         <ExpansionPanel.Content>
-                            <div style={{ height: '200px' }}>Test</div>
+                            <div style={{ height: '200px' }}>E-mail settings</div>
                         </ExpansionPanel.Content>
                     </ExpansionPanel.Panel>
                     <ExpansionPanel.Panel expanded={expanded === 'third'} onChange={() => toggle('third')}>
-                        <ExpansionPanel.Header>Test</ExpansionPanel.Header>
+                        <ExpansionPanel.Header>General</ExpansionPanel.Header>
                         <ExpansionPanel.Content>
-                            <div style={{ height: '100px' }}>Test</div>
+                            <div style={{ height: '100px' }}>General</div>
                         </ExpansionPanel.Content>
                     </ExpansionPanel.Panel>
                 </React.Fragment>

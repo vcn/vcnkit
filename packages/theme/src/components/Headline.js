@@ -2,6 +2,6 @@ import styled from 'styled-components';
 
 import { getTextStyle } from '../';
 
-export default styled.h1`
+export default styled.h5`
     ${getTextStyle('headline')};
 `;

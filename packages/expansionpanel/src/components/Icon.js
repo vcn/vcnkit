@@ -10,6 +10,8 @@ const Arrow = styled.svg`
     height: 1.5rem;
     width: 1.5rem;
     fill: ${getColor('activeIcon')};
+
+    display: block;
 `;
 
 const Icon = () => (

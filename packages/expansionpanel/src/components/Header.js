@@ -19,8 +19,10 @@ const Container = styled.header`
     &:focus {
         outline: 0;
     }
+`;
 
-    ${getTextStyle('subheading1')};
+const InnerContainer = styled.div`
+    ${getTextStyle('subhead')};
 `;
 
 const IconContainer = styled.div`
@@ -59,7 +61,7 @@ class Header extends React.Component {
                         onClick={toggle}
                         onKeyPress={event => this.handleKeyPress(event, toggle)}
                     >
-                        {children}
+                        <InnerContainer>{children}</InnerContainer>
                         <IconContainer>{icon ? icon : <Icon />}</IconContainer>
                     </Container>
                 )}

@@ -6,128 +6,52 @@ import styled from 'styled-components';
 import fonts from '../../fonts';
 import { getTextStyle } from '../../';
 
-it('Provides hero style correctly', () => {
-    const HeroText = styled.div`
-        ${getTextStyle('hero')};
-    `;
+const styles = [
+    'hero',
+    'title1',
+    'title2',
+    'title3',
+    'headline',
+    'body',
+    'callout',
+    'subhead',
+    'footnote',
+    'caption1',
+    'caption2',
+    'overline',
+];
 
-    const tree = renderer.create(<HeroText />).toJSON();
+function testStyle(style) {
+    return function() {
+        const Text = styled.div`
+            ${getTextStyle(style)};
+        `;
 
-    expect(tree).toMatchSnapshot();
-    expect(tree).toHaveStyleRule('font-family', '"Roboto",sans-serif');
-    expect(tree).toHaveStyleRule('font-size', `${fonts.heroSize}rem`);
-    expect(tree).toHaveStyleRule('font-weight', `${fonts.heroWeight}`);
-    expect(tree).toHaveStyleRule('line-height', `${fonts.heroLineHeight}`);
-});
+        const tree = renderer.create(<Text />).toJSON();
 
-it('Provides headline style correctly', () => {
-    const HeadlineText = styled.div`
-        ${getTextStyle('headline')};
-    `;
+        const size = `${style}Size`;
+        const weight = `${style}Weight`;
+        const lineHeight = `${style}LineHeight`;
+        const letterSpacing = `${style}LetterSpacing`;
 
-    const tree = renderer.create(<HeadlineText />).toJSON();
+        expect(tree).toMatchSnapshot();
+        expect(tree).toHaveStyleRule('font-family', '"Roboto",sans-serif');
+        expect(tree).toHaveStyleRule('font-size', `${fonts[size]}em`);
+        expect(tree).toHaveStyleRule('font-weight', `${fonts[weight]}`);
+        expect(tree).toHaveStyleRule('line-height', `${fonts[lineHeight]}`);
+        expect(tree).toHaveStyleRule('letter-spacing', `${fonts[letterSpacing]}em`);        
+    }
+}
 
-    expect(tree).toMatchSnapshot();
-    expect(tree).toHaveStyleRule('font-family', '"Roboto",sans-serif');
-    expect(tree).toHaveStyleRule('font-size', `${fonts.headlineSize}rem`);
-    expect(tree).toHaveStyleRule('font-weight', `${fonts.headlineWeight}`);
-    expect(tree).toHaveStyleRule('line-height', `${fonts.headlineLineHeight}`);
-});
-
-it('Provides title1 style correctly', () => {
-    const Title1Text = styled.div`
-        ${getTextStyle('title1')};
-    `;
-
-    const tree = renderer.create(<Title1Text />).toJSON();
-
-    expect(tree).toMatchSnapshot();
-    expect(tree).toHaveStyleRule('font-family', '"Roboto",sans-serif');
-    expect(tree).toHaveStyleRule('font-size', `${fonts.title1Size}rem`);
-    expect(tree).toHaveStyleRule('font-weight', `${fonts.title1Weight}`);
-    expect(tree).toHaveStyleRule('line-height', `${fonts.title1LineHeight}`);
-});
-
-it('Provides title2 style correctly', () => {
-    const Title2Text = styled.div`
-        ${getTextStyle('title2')};
-    `;
-
-    const tree = renderer.create(<Title2Text />).toJSON();
-
-    expect(tree).toMatchSnapshot();
-    expect(tree).toHaveStyleRule('font-family', '"Roboto",sans-serif');
-    expect(tree).toHaveStyleRule('font-size', `${fonts.title2Size}rem`);
-    expect(tree).toHaveStyleRule('font-weight', `${fonts.title2Weight}`);
-    expect(tree).toHaveStyleRule('line-height', `${fonts.title2LineHeight}`);
-});
-
-it('Provides subheading1 style correctly', () => {
-    const Subheading1Text = styled.div`
-        ${getTextStyle('subheading1')};
-    `;
-
-    const tree = renderer.create(<Subheading1Text />).toJSON();
-
-    expect(tree).toMatchSnapshot();
-    expect(tree).toHaveStyleRule('font-family', '"Roboto",sans-serif');
-    expect(tree).toHaveStyleRule('font-size', `${fonts.subheading1Size}rem`);
-    expect(tree).toHaveStyleRule('font-weight', `${fonts.subheading1Weight}`);
-    expect(tree).toHaveStyleRule('line-height', `${fonts.subheading1LineHeight}`);
-});
-
-it('Provides subheading2 style correctly', () => {
-    const Subheading2Text = styled.div`
-        ${getTextStyle('subheading2')};
-    `;
-
-    const tree = renderer.create(<Subheading2Text />).toJSON();
-
-    expect(tree).toMatchSnapshot();
-    expect(tree).toHaveStyleRule('font-family', '"Roboto",sans-serif');
-    expect(tree).toHaveStyleRule('font-size', `${fonts.subheading2Size}rem`);
-    expect(tree).toHaveStyleRule('font-weight', `${fonts.subheading2Weight}`);
-    expect(tree).toHaveStyleRule('line-height', `${fonts.subheading2LineHeight}`);
-});
-
-it('Provides body1 style correctly', () => {
-    const Body1Text = styled.div`
-        ${getTextStyle('body1')};
-    `;
-
-    const tree = renderer.create(<Body1Text />).toJSON();
-
-    expect(tree).toMatchSnapshot();
-    expect(tree).toHaveStyleRule('font-family', '"Roboto",sans-serif');
-    expect(tree).toHaveStyleRule('font-size', `${fonts.body1Size}rem`);
-    expect(tree).toHaveStyleRule('font-weight', `${fonts.body1Weight}`);
-    expect(tree).toHaveStyleRule('line-height', `${fonts.body1LineHeight}`);
-});
-
-it('Provides body2 style correctly', () => {
-    const Body2Text = styled.div`
-        ${getTextStyle('body2')};
-    `;
-
-    const tree = renderer.create(<Body2Text />).toJSON();
-
-    expect(tree).toMatchSnapshot();
-    expect(tree).toHaveStyleRule('font-family', '"Roboto",sans-serif');
-    expect(tree).toHaveStyleRule('font-size', `${fonts.body2Size}rem`);
-    expect(tree).toHaveStyleRule('font-weight', `${fonts.body2Weight}`);
-    expect(tree).toHaveStyleRule('line-height', `${fonts.body2LineHeight}`);
-});
-
-it('Provides caption style correctly', () => {
-    const CaptionText = styled.div`
-        ${getTextStyle('caption')};
-    `;
-
-    const tree = renderer.create(<CaptionText />).toJSON();
-
-    expect(tree).toMatchSnapshot();
-    expect(tree).toHaveStyleRule('font-family', '"Roboto",sans-serif');
-    expect(tree).toHaveStyleRule('font-size', `${fonts.captionSize}rem`);
-    expect(tree).toHaveStyleRule('font-weight', `${fonts.captionWeight}`);
-    expect(tree).toHaveStyleRule('line-height', `${fonts.captionLineHeight}`);
-});
+it('Provides the hero-style correctly', testStyle('hero'));
+it('Provides the title1-style correctly', testStyle('title1'));
+it('Provides the title2-style correctly', testStyle('title2'));
+it('Provides the title3-style correctly', testStyle('title3'));
+it('Provides the headline-style correctly', testStyle('headline'));
+it('Provides the body-style correctly', testStyle('body'));
+it('Provides the callout-style correctly', testStyle('callout'));
+it('Provides the subhead-style correctly', testStyle('subhead'));
+it('Provides the footnote-style correctly', testStyle('footnote'));
+it('Provides the caption1-style correctly', testStyle('caption1'));
+it('Provides the caption2-style correctly', testStyle('caption2'));
+it('Provides the overline-style correctly', testStyle('overline'));
