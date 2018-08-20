@@ -1,56 +1,52 @@
 import * as React from 'react';
-import posed from 'react-pose';
-import ResizeObserver from 'resize-observer-polyfill';
-
-const Box = posed.div({
-    expanded: {
-        height:     props => props.height,
-        transition: {
-            ease:    'easeInOut',
-            duration: 250,
-        },
-    },
-});
+import Animated from 'animated/lib/targets/react-dom';
+import Easing from 'animated/lib/Easing';
 
 class AnimateHeight extends React.Component {
     state = {
-        height: 0,
+        animation: new Animated.Value(0),
+        finished: false,
     };
 
     innerNode;
-    resizeObserver;
 
-    componentDidMount() {
-        this.resizeObserver = new ResizeObserver(() => {
+    componentDidUpdate(prevProps) {
+        if (prevProps.expanded !== this.props.expanded) {
+            this.setState({
+                finished: false,
+            });
+            
             this.animateHeight();
-        });
-
-        if (this.innerNode) {
-            this.resizeObserver.observe(this.innerNode);
         }
     }
 
-    componentWillUnmount() {
-        this.resizeObserver.disconnect();
-    }
+    handleComplete = ({ finished }) => {
+        this.setState({
+            finished,
+        });
+    };
 
     animateHeight = () => {
         if (this.innerNode) {
-            this.setState({
-                height: this.innerNode.scrollHeight,
-            });
+            Animated.timing(this.state.animation, {
+                toValue: this.innerNode.scrollHeight,
+                duration: 80,
+                easing: Easing.inOut(Easing.quad),
+                onEnd: this.handleComplete,
+            }).start(this.handleComplete);
         }
     };
 
     render() {
-        const { children } = this.props;
-        const { height } = this.state;
+        const { children, expanded } = this.props;
+        const { animation, finished } = this.state;
 
         return (
-            <Box
-                height={ height }
-                pose="expanded"
-                poseKey={ height }
+            <Animated.div
+                style={{
+                    overflow: finished ? undefined : 'hidden',
+                    height: finished ? undefined : animation,
+                }}
             >
                 <div
                     ref={node => {
@@ -58,9 +54,9 @@ class AnimateHeight extends React.Component {
                     }}
                     style={{ display: 'flex', flexDirection: 'column' }}
                 >
-                    {children}
+                    {expanded && children}
                 </div>
-            </Box>
+            </Animated.div>
         );
     }
 }

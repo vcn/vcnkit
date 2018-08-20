@@ -15,18 +15,16 @@ const Container = styled.header`
     transition: padding 0.2s;
     align-items: center;
 
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 1.33333333;
+    letter-spacing: -0.008em;
+    color: hsla(0, 0%, 0%, 0.87);
+
     &:focus {
         outline: 0;
     }
-`;
-
-const InnerContainer = styled.div`
-    font-family:     "Roboto", sans-serif;
-    font-size:       0.9375rem;
-    font-weight:     400;
-    line-height:     1.33333333;
-    letter-spacing:  -0.008em;
-    color:           hsla(0, 0%, 0%, .87);
 `;
 
 const IconContainer = styled.div`
@@ -65,7 +63,7 @@ class Header extends React.Component {
                         onClick={toggle}
                         onKeyPress={event => this.handleKeyPress(event, toggle)}
                     >
-                        <InnerContainer>{children}</InnerContainer>
+                        {children}
                         <IconContainer>{icon ? icon : <Icon />}</IconContainer>
                     </Container>
                 )}

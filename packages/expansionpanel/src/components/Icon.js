@@ -8,7 +8,7 @@ const Arrow = styled.svg`
     transform: rotate(${props => (props.expanded ? -180 : 0)}deg);
     height: 1.5rem;
     width: 1.5rem;
-    fill: hsla(0, 0%, 0%, .54);
+    fill: hsla(0, 0%, 0%, 0.54);
 
     display: block;
 `;

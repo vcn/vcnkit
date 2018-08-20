@@ -5,7 +5,7 @@ import { PanelContext } from './Panel';
 import AnimateHeight from './AnimateHeight';
 
 const Content = ({ children }) => (
-    <PanelContext>{({ expanded }) => <AnimateHeight>{expanded && children}</AnimateHeight>}</PanelContext>
+    <PanelContext>{({ expanded }) => <AnimateHeight expanded={expanded}>{children}</AnimateHeight>}</PanelContext>
 );
 
 Content.propTypes = {

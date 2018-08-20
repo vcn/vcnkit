@@ -39,8 +39,8 @@ function testStyle(style) {
         expect(tree).toHaveStyleRule('font-size', `${fonts[size]}em`);
         expect(tree).toHaveStyleRule('font-weight', `${fonts[weight]}`);
         expect(tree).toHaveStyleRule('line-height', `${fonts[lineHeight]}`);
-        expect(tree).toHaveStyleRule('letter-spacing', `${fonts[letterSpacing]}em`);        
-    }
+        expect(tree).toHaveStyleRule('letter-spacing', `${fonts[letterSpacing]}em`);
+    };
 }
 
 it('Provides the hero-style correctly', testStyle('hero'));

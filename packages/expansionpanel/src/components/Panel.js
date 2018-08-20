@@ -44,7 +44,7 @@ const StyledPanel = styled(Panel)`
     transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1);
 
     box-shadow: ${getShadow(1)};
-    background: #FFFFFF;
+    background: #ffffff;
 `;
 
 export default expandable()(StyledPanel);
