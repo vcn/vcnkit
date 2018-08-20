@@ -27,9 +27,9 @@
     "dependencies": {
         "@vcnkit/essentials": "^0.1.0",
         "@vcnkit/theme": "^2.1.0",
-        "animated": "^0.2.2",
         "hoist-non-react-statics": "^3.0.1",
         "prop-types": "^15.6.2",
+        "react-pose": "^2.3.0",
         "resize-observer-polyfill": "^1.5.0"
     },
     "peerDependencies": {

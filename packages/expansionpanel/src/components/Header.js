@@ -1,7 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { getTextStyle } from '@vcnkit/theme';
 
 import { PanelContext } from './Panel';
 import Icon from './Icon';
@@ -22,7 +21,12 @@ const Container = styled.header`
 `;
 
 const InnerContainer = styled.div`
-    ${getTextStyle('subhead')};
+    font-family:     "Roboto", sans-serif;
+    font-size:       0.9375rem;
+    font-weight:     400;
+    line-height:     1.33333333;
+    letter-spacing:  -0.008em;
+    color:           hsla(0, 0%, 0%, .87);
 `;
 
 const IconContainer = styled.div`

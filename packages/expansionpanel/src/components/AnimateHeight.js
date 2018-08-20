@@ -1,11 +1,20 @@
 import * as React from 'react';
-import Animated from 'animated/lib/targets/react-dom';
-import Easing from 'animated/lib/Easing';
+import posed from 'react-pose';
 import ResizeObserver from 'resize-observer-polyfill';
+
+const Box = posed.div({
+    expanded: {
+        height:     props => props.height,
+        transition: {
+            ease:    'easeInOut',
+            duration: 250,
+        },
+    },
+});
 
 class AnimateHeight extends React.Component {
     state = {
-        animation: new Animated.Value(0),
+        height: 0,
     };
 
     innerNode;
@@ -27,20 +36,22 @@ class AnimateHeight extends React.Component {
 
     animateHeight = () => {
         if (this.innerNode) {
-            Animated.timing(this.state.animation, {
-                toValue: this.innerNode.scrollHeight,
-                duration: 80,
-                easing: Easing.inOut(Easing.quad),
-            }).start();
+            this.setState({
+                height: this.innerNode.scrollHeight,
+            });
         }
     };
 
     render() {
         const { children } = this.props;
-        const { animation } = this.state;
+        const { height } = this.state;
 
         return (
-            <Animated.div style={{ overflow: 'hidden', height: animation }}>
+            <Box
+                height={ height }
+                pose="expanded"
+                poseKey={ height }
+            >
                 <div
                     ref={node => {
                         this.innerNode = node;
@@ -49,7 +60,7 @@ class AnimateHeight extends React.Component {
                 >
                     {children}
                 </div>
-            </Animated.div>
+            </Box>
         );
     }
 }

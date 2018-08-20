@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { getColor } from '@vcnkit/theme';
 
 import { PanelContext } from './Panel';
 
@@ -9,7 +8,7 @@ const Arrow = styled.svg`
     transform: rotate(${props => (props.expanded ? -180 : 0)}deg);
     height: 1.5rem;
     width: 1.5rem;
-    fill: ${getColor('activeIcon')};
+    fill: hsla(0, 0%, 0%, .54);
 
     display: block;
 `;

@@ -2,7 +2,7 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { noop, expandable } from '@vcnkit/essentials';
-import { getColor, getShadow } from '@vcnkit/theme';
+import { getShadow } from '@vcnkit/theme';
 
 const { Provider, Consumer: PanelContext } = React.createContext({
     expanded: false,
@@ -44,7 +44,7 @@ const StyledPanel = styled(Panel)`
     transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1);
 
     box-shadow: ${getShadow(1)};
-    background: ${getColor('sheet')};
+    background: #FFFFFF;
 `;
 
 export default expandable()(StyledPanel);
