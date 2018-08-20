@@ -5,7 +5,7 @@ import Easing from 'animated/lib/Easing';
 class AnimateHeight extends React.Component {
     state = {
         animation: new Animated.Value(0),
-        finished: false,
+        finished: true,
     };
 
     innerNode;
@@ -15,7 +15,7 @@ class AnimateHeight extends React.Component {
             this.setState({
                 finished: false,
             });
-            
+
             this.animateHeight();
         }
     }
