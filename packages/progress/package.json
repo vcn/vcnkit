@@ -1,0 +1,44 @@
+{
+    "name": "@vcnkit/progress",
+    "version": "0.0.0",
+    "description": "Progress indicators for VCNKit",
+    "author": "VCN Verzekerings Combinatie Nederland B.V.",
+    "maintainers": [
+        "Freek Post <fpost@vcn.nl>"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/vcn/vcnkit"
+    },
+    "bugs": "https://github.com/vcn/vcnkit/issues",
+    "engines": {
+        "node": ">8.0.0"
+    },
+    "scripts": {
+        "build": "rimraf dist && babel src -d dist --ignore '*.test.js,*.spec.js'",
+        "clean": "rimraf dist"
+    },
+    "license": "MIT",
+    "main": "dist/index.js",
+    "module": "dist/index.js",
+    "files": [
+        "dist"
+    ],
+    "dependencies": {
+        "@vcnkit/essentials": "^0.1.0",
+        "@vcnkit/theme": "^2.1.1",
+        "animated": "^0.2.2",
+        "hoist-non-react-statics": "^3.0.1",
+        "prop-types": "^15.6.2"
+    },
+    "peerDependencies": {
+        "react": "^16.3.0",
+        "styled-components": "^3.2.5"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "jest": {
+        "testURL": "http://localhost/"
+    }
+}
