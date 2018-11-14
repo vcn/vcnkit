@@ -1,6 +1,6 @@
 # VCNKit/Progress
 
-`@vcnkit/progress` provides a determinate and indeterminate progress indicators.
+`@vcnkit/progress` provides a linear and a circular progress indicator. The indicators can be used in either determinate or indeterminate mode.
 
 ## Installation
 
@@ -47,18 +47,6 @@ import { Circular } from '@vcnkit/progress';
 
 const SomeComponent = () => (
     <Circular width={ 32 } />
-);
-```
-
-#### Custom color
-
-The circular indicator accepts a `color`-prop to change the color of the progress indicator.
-
-```jsx
-import { Circular } from '@vcnkit/progress';
-
-const SomeComponent = () => (
-    <Circular color="white" />
 );
 ```
 

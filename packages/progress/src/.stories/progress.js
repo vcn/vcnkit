@@ -50,10 +50,10 @@ storiesOf('Progress', module)
     .addDecorator(ThemeDecorator)
     .addDecorator(GridDecorator)
     .add('Circular', () => [
-        <Circular width={ 16 }/>,
-        <Circular color="black" width={ 32 }/>,
-        <Circular color="green" width={ 64 } />,
-        <Determinate>
+        <Circular key="small" width={ 16 }/>,
+        <Circular key="medium" width={ 32 }/>,
+        <Circular key="large" width={ 64 } />,
+        <Determinate key="determinate">
             { (percentage) => (
                 <Circular
                     determinate
@@ -63,13 +63,13 @@ storiesOf('Progress', module)
         </Determinate>
     ])
     .add('Linear', () => [
-        <Container>
+        <Container key="first">
             <Linear />
         </Container>,
-        <Container>
-            <Linear color="green" />
+        <Container key="second">
+            <Linear />
         </Container>,
-        <Determinate>
+        <Determinate key="determinate">
             { (percentage) => (
                 <Container>
                     <Linear
