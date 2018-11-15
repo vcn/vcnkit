@@ -23,6 +23,21 @@ export default function(focusOnChildFocus = false) {
                 focused: false,
             };
 
+            /**
+             * Fixes not losing the 'focused' state when the element gets disabled.
+             * See https://github.com/facebook/react/issues/9142
+             */
+            componentDidUpdate() {
+                const { focused } = this.state;
+                const { disabled } = this.props;
+
+                if (focused && disabled) {
+                    this.setState({
+                        focused: false,
+                    });
+                }
+            }
+ 
             handleFocus = event => {
                 const { disabled, onFocus } = this.props;
 
