@@ -1,6 +1,6 @@
 {
     "name": "@vcnkit/expansionpanel",
-    "version": "0.2.2",
+    "version": "0.2.3",
     "description": "Essential elements for VCNKit",
     "author": "VCN Verzekerings Combinatie Nederland B.V.",
     "maintainers": [
@@ -25,7 +25,7 @@
         "dist"
     ],
     "dependencies": {
-        "@vcnkit/essentials": "^0.1.0",
+        "@vcnkit/essentials": "^0.1.1",
         "@vcnkit/theme": "^2.1.1",
         "animated": "^0.2.2",
         "hoist-non-react-statics": "^3.0.1",
