@@ -28,7 +28,11 @@ More information can be found in the package's subdirectory: `packages/<package-
 * [Node](https://nodejs.org/) 8 or higher.
 * [Yarn](https://yarnpkg.com/)
 * [Lerna](https://github.com/lerna/lerna)
+* [babel-cli](https://babeljs.io/)
 
 ## Launching Storybook
 
-Simply `yarn install` and `yarn start` to build the packages and launch [Storybook](https://github.com/storybooks/storybook).
+1. `yarn install`
+2. `yarn build`
+3. `yarn start`
+4. Open [Storybook](https://github.com/storybooks/storybook) via the url in the cli output.

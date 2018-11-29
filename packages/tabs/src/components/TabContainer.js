@@ -10,6 +10,7 @@ class TabContainer extends React.Component {
         children: PropTypes.node,
         tabIndex: PropTypes.number,
         disabled: PropTypes.bool,
+        key: PropTypes.string.isRequired,
     };
 
     static defaultProps = {
@@ -50,13 +51,13 @@ class TabContainer extends React.Component {
     };
 
     render() {
-        const { children, ...props } = this.props;
+        const { children, className } = this.props;
 
         return (
             <div
                 onClick={ this.onSelect }
                 ref={ ref => this.tabRef = ref }
-                { ...props }
+                className={ className }
             >
                 { children }
             </div>
@@ -66,28 +67,26 @@ class TabContainer extends React.Component {
 
 export default styled(TabContainer)`
     margin: 0.25rem;
-    margin-bottom: 0.5rem;
     padding: 0.375rem;
-    max-height: 1.625rem;
-    min-width: 6rem;
     line-height: 1rem;
     text-align: center;
     cursor:  pointer;
     position: relative;
-    width: max-content;
     display: block;
     max-width: 10rem;
-    
+    min-width: 6rem;
+    width: max-content;
+
     ${ props => props.isSelected ? 'opacity: 1;' : 'opacity: 0.68;' }
     ${ props => props.disabled && `
         opacity: 0.34 !important;
         cursor: not-allowed;
     ` }
-    
+
     &:focus {
         outline: none;
     }
-    
+
     &:hover {
         opacity: 0.80;
     }

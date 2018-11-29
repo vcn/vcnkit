@@ -19,8 +19,9 @@ const TabsContainer = styled.div`
 `;
 
 const Bar = styled.div`
-    display: inline-flex;
-    width:   fit-content;
+    display:   inline-flex;
+    width:     fit-content;
+    max-width: 100%;
 `;
 
 const ChildContainer = styled.div`
@@ -33,9 +34,11 @@ const Arrow = styled.svg`
     transform: rotate(${props => (props.direction === 'left' ? 90 : -90)}deg);
     height: 1.5rem;
     width: 1.5rem;
+    min-width: 1.5rem;
     fill: hsla(0, 0%, 0%, 0.54);
     margin: 0.5rem;
     cursor: pointer;
+    align-self: center;
 
     display: block;
 `;
@@ -47,22 +50,25 @@ const ScrollArrow = ({ ...props }) => (
 );
 
 const ScrollOffset = styled.div`
+    height: 1.5rem;
     width: 2.5rem;
 `;
 
 class Container extends React.Component {
     static propTypes = {
         onSelect: PropTypes.func,
+        selected: PropTypes.any,
     };
 
     static defaultProps = {
         onSelect: noop,
+        selected: null,
     };
 
     state = {
         indicatorOffset: 0,
         indicatorWidth:  0,
-        selected:        0,
+        selectedIndex:   null,
         disabled:        [],
     };
 
@@ -78,7 +84,6 @@ class Container extends React.Component {
     }
 
     handleKeyDown = event => {
-        event.preventDefault();
         switch (event.keyCode) {
             case 37:
                 this.onTabLeft();
@@ -90,10 +95,15 @@ class Container extends React.Component {
     };
 
     onSelect = tabIndex => {
-        if (this.state.selected !== tabIndex) {
+        if (this.state.selectedIndex !== tabIndex) {
+
+            const child = this.props.children[ tabIndex ];
+
             this.setState({
-                selected: tabIndex,
+                selectedIndex: tabIndex,
             });
+
+            this.props.onSelect(child.key);
         }
     };
 
@@ -138,7 +148,6 @@ class Container extends React.Component {
     };
 
     renderChild = (child, index) => {
-        const isSelected = !('isSelected' in child.props) && this.state.selected === index;
         const isDisabled = ('disabled' in child.props) && child.props.disabled === true;
 
         if (isDisabled && this.state.disabled.indexOf(index) === -1) {
@@ -152,38 +161,52 @@ class Container extends React.Component {
 
         return React.cloneElement(child, {
             tabIndex: index,
-            isSelected: isSelected === false ? false : isSelected,
+            isSelected: index === this.state.selectedIndex,
             ...child.props
         });
     };
 
     onTabRight = () => {
-        const { selected } = this.state;
+        const { selectedIndex } = this.state;
         const { children } = this.props;
 
-        if (selected < (children.length - 1)) {
-            this.setState({
-                selected: selected + 1,
-            });
-
-            if (this.state.disabled.indexOf(selected + 1) !== -1) {
-                this.onTabRight();
-            }
+        const index = this.checkRightIndex(selectedIndex + 1, children.length);
+        if (index !== null) {
+            this.onSelect(index);
         }
     };
 
-    onTabLeft = () => {
-        const { selected } = this.state;
-
-        if (selected > 0) {
-            this.setState({
-                selected: (selected - 1),
-            });
-
-            if (this.state.disabled.indexOf(selected - 1) !== -1) {
-                this.onTabLeft();
+    checkRightIndex = (index, childCount) => {
+        if (index < childCount) {
+            if (this.state.disabled.indexOf(index) !== -1) {
+                return this.checkRightIndex(index + 1, childCount);
             }
+
+            return index;
         }
+
+        return null;
+    };
+
+    onTabLeft = () => {
+        const { selectedIndex } = this.state;
+
+        const index = this.checkLeftIndex(selectedIndex - 1);
+        if (index !== null) {
+            this.onSelect(index);
+        }
+    };
+
+    checkLeftIndex = (index) => {
+        if (index >= 0) {
+            if (this.state.disabled.indexOf(index) !== -1) {
+                return this.checkLeftIndex(index - 1);
+            }
+
+            return index;
+        }
+
+        return null;
     };
 
     renderLeftScroll = () => {
@@ -205,18 +228,66 @@ class Container extends React.Component {
     };
 
     renderRightScroll = () => {
-        const { barRef, containerRef }  = this;
+        const { barRef, containerRef } = this;
 
-        if ((barRef && containerRef) &&
-            (barRef.offsetWidth > containerRef.offsetWidth) &&
-            containerRef.scrollLeft < (containerRef.offsetWidth / 2 + 75)
-        ) {
-            return (
-                <ScrollArrow direction="right" onClick={ () => { this.scrollContainer(containerRef.scrollLeft + 150); } } />
-            );
+        if (barRef && containerRef && barRef.offsetWidth > containerRef.offsetWidth) {
+            if (containerRef.offsetWidth + containerRef.scrollLeft < barRef.offsetWidth) {
+                return (
+                    <ScrollArrow direction="right" onClick={ () => { this.scrollContainer(containerRef.scrollLeft + 150); } } />
+                );
+            } else {
+                return (
+                    <ScrollOffset />
+                );
+            }
         }
 
         return null;
+    };
+
+    determineSelectedIndex = () => {
+        const { children, selected } = this.props;
+
+        let { selectedIndex } = this.state;
+
+        // Set initial selected index
+        if (selectedIndex === null && selected !== null) {
+            for (let i = 0; i < children.length; i++) {
+                if (children[i].key === selected) {
+                    selectedIndex = i;
+
+                    this.setState({
+                        selectedIndex,
+                    });
+
+                    break;
+                }
+            }
+        }
+
+        // Initial tab not found or set, select 1st tab
+        if (selectedIndex === null) {
+            for (let i = 0; i < children.length; i++) {
+                let child = children[i];
+
+                const isDisabled = ('disabled' in child.props) && child.props.disabled === true;
+
+                if (isDisabled && this.state.disabled.indexOf(i) === -1) {
+                    this.setState({
+                        disabled: [
+                            ...this.state.disabled,
+                            i
+                        ],
+                    });
+                } else if (selectedIndex === null) {
+                    selectedIndex = i;
+                }
+            }
+
+            this.setState({
+                selectedIndex
+            });
+        }
     };
 
     render() {
@@ -224,8 +295,10 @@ class Container extends React.Component {
             children,
             indicatorColor,
             width,
-            ...props,
+            ...props
         } = this.props;
+
+        this.determineSelectedIndex();
 
         return (
             <Provider
