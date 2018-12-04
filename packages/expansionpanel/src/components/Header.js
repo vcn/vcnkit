@@ -27,8 +27,15 @@ const Container = styled.header`
     }
 `;
 
+const ContentContainer = styled.div`
+    display:        flex;
+    flex-direction: row;
+
+    flex: 1 1 auto;
+`;
+
 const IconContainer = styled.div`
-    margin-left: auto;
+    padding-left: 1.5rem;
 `;
 
 class Header extends React.Component {
@@ -63,7 +70,7 @@ class Header extends React.Component {
                         onClick={toggle}
                         onKeyPress={event => this.handleKeyPress(event, toggle)}
                     >
-                        {children}
+                        <ContentContainer>{ children }</ContentContainer>
                         <IconContainer>{icon ? icon : <Icon />}</IconContainer>
                     </Container>
                 )}
