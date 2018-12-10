@@ -45,6 +45,10 @@ const StyledPanel = styled(Panel)`
 
     box-shadow: ${getShadow(1)};
     background: #ffffff;
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        border-bottom: .0625rem solid #EFEFEF;
+    }
 `;
 
 export default expandable()(StyledPanel);

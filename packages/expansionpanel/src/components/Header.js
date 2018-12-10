@@ -25,6 +25,10 @@ const Container = styled.header`
     &:focus {
         outline: 0;
     }
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        height: 3.25rem;
+    }
 `;
 
 const ContentContainer = styled.div`
