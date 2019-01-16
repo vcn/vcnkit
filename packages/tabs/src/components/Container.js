@@ -166,6 +166,19 @@ class Container extends React.Component {
         });
     };
 
+    componentDidUpdate(prevProps) {
+        const { children, selected } = this.props;
+
+        if (prevProps.selected !== selected) {
+
+            const selectedIndex = children.findIndex(child => child.key === selected);
+
+            if(selectedIndex !== -1 && selectedIndex !== this.state.selectedIndex) {
+                this.setState({ selectedIndex });
+            }
+        }
+    }
+
     onTabRight = () => {
         const { selectedIndex } = this.state;
         const { children } = this.props;
