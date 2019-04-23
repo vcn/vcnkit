@@ -9,8 +9,7 @@ class TabContainer extends React.Component {
         onActive: PropTypes.func,
         children: PropTypes.node,
         tabIndex: PropTypes.number,
-        disabled: PropTypes.bool,
-        key: PropTypes.string.isRequired,
+        disabled: PropTypes.bool
     };
 
     static defaultProps = {

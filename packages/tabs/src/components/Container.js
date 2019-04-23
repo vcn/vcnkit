@@ -58,11 +58,13 @@ class Container extends React.Component {
     static propTypes = {
         onSelect: PropTypes.func,
         selected: PropTypes.any,
+        scrollDistance: PropTypes.number
     };
 
     static defaultProps = {
         onSelect: noop,
         selected: null,
+        scrollDistance: 75
     };
 
     state = {
@@ -118,7 +120,7 @@ class Container extends React.Component {
         const { containerRef, easeInOutQuad } = this;
 
         let start = containerRef ? containerRef.scrollLeft : 0,
-            change = offset - start - 75,
+            change = offset - start - this.props.scrollDistance,
             currentTime = 0,
             increment = 20;
 
@@ -228,7 +230,7 @@ class Container extends React.Component {
         if (barRef && containerRef) {
             if (containerRef.scrollLeft > 0) {
                 return (
-                    <ScrollArrow direction="left" onClick={ () => { this.scrollContainer(containerRef.scrollLeft); } } />
+                    <ScrollArrow direction="left" onClick={ () => { this.scrollContainer(containerRef.scrollLeft - this.props.scrollDistance); } } />
                 );
             } else if (containerRef.scrollLeft === 0 && barRef.offsetWidth > containerRef.offsetWidth) {
                 return (
@@ -246,7 +248,7 @@ class Container extends React.Component {
         if (barRef && containerRef && barRef.offsetWidth > containerRef.offsetWidth) {
             if (containerRef.offsetWidth + containerRef.scrollLeft < barRef.offsetWidth) {
                 return (
-                    <ScrollArrow direction="right" onClick={ () => { this.scrollContainer(containerRef.scrollLeft + 150); } } />
+                    <ScrollArrow direction="right" onClick={ () => { this.scrollContainer(containerRef.scrollLeft + (this.props.scrollDistance * 2 )); } } />
                 );
             } else {
                 return (

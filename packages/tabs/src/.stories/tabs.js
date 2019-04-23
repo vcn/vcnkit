@@ -37,6 +37,20 @@ storiesOf('Tabs', module)
                 <Tabs.Tab key="TabSeven">Tab 7</Tabs.Tab>
             </Tabs.Container>
             <hr style={ { marginTop: '2rem', marginBottom: '1rem' } }/>
+            <Tabs.Container scrollDistance={250} width="4" indicatorColor="rgb(0, 0, 0)">
+                <Tabs.Tab key="TabOne">Tab 1</Tabs.Tab>
+                <Tabs.Tab key="TabTwo">Tab 2</Tabs.Tab>
+                <Tabs.Tab key="TabThree">Tab 3</Tabs.Tab>
+                <Tabs.Tab key="TabFour">Tab 4</Tabs.Tab>
+                <Tabs.Tab key="TabFive">Tab 5</Tabs.Tab>
+                <Tabs.Tab key="TabSix">Tab 6</Tabs.Tab>
+                <Tabs.Tab key="TabSeven">Tab 7</Tabs.Tab>
+                <Tabs.Tab key="TabEight">Tab 8</Tabs.Tab>
+                <Tabs.Tab key="TabNine">Tab 9</Tabs.Tab>
+                <Tabs.Tab key="TabTen">Tab 10</Tabs.Tab>
+                <Tabs.Tab key="TabEleven">Tab 11</Tabs.Tab>
+            </Tabs.Container>
+            <hr style={ { marginTop: '2rem', marginBottom: '1rem' } }/>
             <Tabs.Container width="4" selected={ 3 } indicatorColor="rgb(0, 0, 0)">
                 <Tabs.Tab key="TabOne" disabled>Tab 1</Tabs.Tab>
                 <Tabs.Tab key="TabTwo" disabled>Tab 2 with additional text</Tabs.Tab>
