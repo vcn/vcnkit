@@ -328,10 +328,10 @@ class Container extends React.Component {
 
                     <TabsContainer
                         width={ width }
-                        innerRef={ ref => this.containerRef = ref }
+                        ref={ ref => this.containerRef = ref }
                     >
                         <ChildContainer
-                            innerRef={ ref => this.barRef = ref }
+                            ref={ ref => this.barRef = ref }
                         >
                             { children.map((child, index) => this.renderChild(child, index)) }
                         </ChildContainer>
