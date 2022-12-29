@@ -1,11 +1,8 @@
 {
     "name": "@vcnkit/essentials",
-    "version": "0.1.1",
+    "version": "0.2.0",
     "description": "Essential elements for VCNKit",
     "author": "VCN Verzekerings Combinatie Nederland B.V.",
-    "maintainers": [
-        "Freek Post <fpost@vcn.nl>"
-    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/vcn/vcnkit"
@@ -15,7 +12,7 @@
         "node": ">8.0.0"
     },
     "scripts": {
-        "build": "rimraf dist && babel src -d dist --ignore '*.test.js,*.spec.js'",
+        "build": "rimraf dist --ignore '*.test.js,*.spec.js'",
         "clean": "rimraf dist",
         "test": "jest"
     },
@@ -26,11 +23,11 @@
         "dist"
     ],
     "dependencies": {
-        "hoist-non-react-statics": "^3.0.1",
+        "hoist-non-react-statics": "^3.3.2",
         "prop-types": "^15.6.2"
     },
     "peerDependencies": {
-        "react": "^16.3.0"
+        "react": "^18.2.0"
     },
     "publishConfig": {
         "access": "public"
