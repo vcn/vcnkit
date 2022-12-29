@@ -1,11 +1,8 @@
 {
     "name": "@vcnkit/theme",
-    "version": "2.1.1",
+    "version": "2.2.0",
     "description": "Provides a ThemeProvider and theming utilities to use with all VCNKit components",
     "author": "VCN Verzekerings Combinatie Nederland B.V.",
-    "maintainers": [
-        "Freek Post <fpost@vcn.nl>"
-    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/vcn/vcnkit"
@@ -15,7 +12,7 @@
         "node": ">8.0.0"
     },
     "scripts": {
-        "build": "rimraf dist && babel src -d dist --ignore '*.test.js,*.spec.js'",
+        "build": "rimraf dist --ignore '*.test.js,*.spec.js'",
         "clean": "rimraf dist",
         "test": "jest"
     },
@@ -26,13 +23,13 @@
         "dist"
     ],
     "dependencies": {
-        "color": "^3.0.0",
-        "hoist-non-react-statics": "^3.0.1",
-        "prop-types": "^15.6.2"
+        "color": "^4.2.3",
+        "hoist-non-react-statics": "^3.3.1",
+        "prop-types": "^15.8.1"
     },
     "peerDependencies": {
-        "react": "^16.3.0",
-        "styled-components": "^3.2.5"
+        "react": "^18.2.0",
+        "styled-components": "^6.0.0-alpha.7"
     },
     "publishConfig": {
         "access": "public"

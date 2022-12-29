@@ -1,12 +1,7 @@
 {
     "presets": [
-        [
-            "env",
-            {
-                "modules": false
-            }
-        ],
-        "react-app"
+        "@babel/preset-env",
+        "@babel/preset-react"
     ],
     "plugins": [
         [
