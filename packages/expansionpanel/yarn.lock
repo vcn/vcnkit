@@ -2,16 +2,18 @@
 # yarn lockfile v1
 
 
-"@vcnkit/essentials@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@vcnkit/essentials/-/essentials-0.1.0.tgz#4f0d0791a11b793f83b0cb1f1b3b8fb8c91431cf"
+"@vcnkit/essentials@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@vcnkit/essentials/-/essentials-0.1.1.tgz#241b0f96a71458e08a7512f8bc7ae8af1fe33972"
+  integrity sha512-iOqCGPvh4oDWxiBLjWvKfk1D3b+MXv9EEKZfZAB2RgTuVq2UfR3F71fZ05K/2L1X6ssA9JRHr2X+C39JouyhTQ==
   dependencies:
     hoist-non-react-statics "^3.0.1"
     prop-types "^15.6.2"
 
-"@vcnkit/theme@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@vcnkit/theme/-/theme-2.1.0.tgz#0043aa15033d1f2f5aeea3148fd7214a70da4806"
+"@vcnkit/theme@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@vcnkit/theme/-/theme-2.1.1.tgz#3e84f857233ccdea42dda2fbea439edc988b9341"
+  integrity sha512-h/Rri8b43qnwbD8882kGCeEPv6skp/6KuZfvI2gEosx/HRaGykPr8LGAmySU8GIeOn9ArgP4941e+AhF9JPPbQ==
   dependencies:
     color "^3.0.0"
     hoist-non-react-statics "^3.0.1"
@@ -58,6 +60,13 @@ hoist-non-react-statics@^3.0.1:
   dependencies:
     react-is "^16.3.2"
 
+hoist-non-react-statics@^3.3.2:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
+  integrity sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==
+  dependencies:
+    react-is "^16.7.0"
+
 invariant@^2.2.0:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
@@ -96,6 +105,11 @@ prop-types@^15.6.2:
 react-is@^16.3.2:
   version "16.4.2"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.4.2.tgz#84891b56c2b6d9efdee577cc83501dfc5ecead88"
+
+react-is@^16.7.0:
+  version "16.13.1"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
+  integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
 simple-swizzle@^0.2.2:
   version "0.2.2"
