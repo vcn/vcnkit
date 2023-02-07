@@ -13,3 +13,8 @@ const ExpandableComponent = ({ expanded, onChange }) => (
 const DecoratedExpandableComponent = expandable()(ExpandableComponent);
 
 storiesOf('Decorators', module).add('expandable', () => <DecoratedExpandableComponent />);
+
+// export default {
+//     title: 'ExpandableComponent',
+//     component: DecoratedExpandableComponent
+// }

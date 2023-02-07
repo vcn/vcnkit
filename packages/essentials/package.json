@@ -24,7 +24,7 @@
     ],
     "dependencies": {
         "hoist-non-react-statics": "^3.3.2",
-        "prop-types": "^15.6.2"
+        "prop-types": "^15.8.1"
     },
     "peerDependencies": {
         "react": "^18.2.0"
@@ -33,6 +33,12 @@
         "access": "public"
     },
     "jest": {
-        "testURL": "http://localhost/"
+        "testURL": "http://localhost/",
+        "moduleNameMapper": {
+            "^react$": "<rootDir>/../../node_modules/react",
+            "^react-test-renderer$": "<rootDir>/../../node_modules/react-test-renderer",
+            "^react-dom$": "<rootDir>/../../node_modules/react-dom",
+            "^styled-components$": "<rootDir>/../../node_modules/styled-components"
+        }
     }
 }

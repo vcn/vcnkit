@@ -24,17 +24,37 @@
     ],
     "dependencies": {
         "color": "^4.2.3",
-        "hoist-non-react-statics": "^3.3.1",
+        "hoist-non-react-statics": "^3.3.2",
         "prop-types": "^15.8.1"
     },
     "peerDependencies": {
         "react": "^18.2.0",
-        "styled-components": "^6.0.0-alpha.7"
+        "styled-components": "^5.3.6"
     },
     "publishConfig": {
         "access": "public"
     },
     "jest": {
-        "testURL": "http://localhost/"
+        "testEnvironment": "jsdom",
+        "moduleNameMapper": {
+            "^react$": "<rootDir>/../../node_modules/react",
+            "^react-test-renderer$": "<rootDir>/../../node_modules/react-test-renderer",
+            "^react-dom$": "<rootDir>/../../node_modules/react-dom",
+            "^styled-components$": "<rootDir>/../../node_modules/styled-components",
+            "^babel-plugin-styled-components$": "<rootDir>/../../node_modules/babel-plugin-styled-components",
+            "^shallowequal$":  "<rootDir>/../../node_modules/shallowequal",
+            "^stylis$":  "<rootDir>/../../node_modules/stylis",
+            "^tslib$":  "<rootDir>/../../node_modules/tslib",
+            "^jest-styled-components$": "<rootDir>/../../node_modules/jest-styled-components",
+            "^jest$": "<rootDir>/../../node_modules/jest",
+            "^jest-environment-jsdom$": "<rootDir>/../../node_modules/jest-environment-jsdom"
+        }
+    },
+    "resolutions": {
+        "react": "../../node_modules/react",
+        "react-dom": "../../node_modules/react-dom",
+        "react-test-renderer": "../../node_modules/react-test-renderer",
+        "styled-componenets": "../../node_modules/styled-components",
+        "jest": "../../node_modules/jest"
     }
 }

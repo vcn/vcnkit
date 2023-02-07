@@ -1,7 +1,7 @@
 import * as React from 'react';
-import renderer from 'react-test-renderer';
-import 'jest-styled-components';
+import TestRenderer from 'react-test-renderer';
 import styled from 'styled-components';
+import 'jest-styled-components';
 
 import { ThemeProvider } from '../../';
 
@@ -10,7 +10,7 @@ const PrimaryColorComponent = styled.div`
 `;
 
 it('Renders correctly', () => {
-    const tree = renderer
+    const tree = TestRenderer
         .create(
             <ThemeProvider primary="#FF0000">
                 <PrimaryColorComponent />

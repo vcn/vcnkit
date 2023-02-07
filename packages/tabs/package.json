@@ -25,19 +25,25 @@
         "dist"
     ],
     "dependencies": {
-        "@vcnkit/essentials": "^0.1.1",
-        "@vcnkit/theme": "^2.1.1",
-        "hoist-non-react-statics": "^3.0.1",
-        "prop-types": "^15.6.2"
+        "@vcnkit/essentials": "*",
+        "@vcnkit/theme": "^*",
+        "hoist-non-react-statics": "^3.3.2",
+        "prop-types": "^15.8.1"
     },
     "peerDependencies": {
         "react": "^18.2.0",
-        "styled-components": "^3.2.5"
+        "styled-components": "^5.3.6"
     },
     "publishConfig": {
         "access": "public"
     },
     "jest": {
-        "testURL": "http://localhost/"
+        "testURL": "http://localhost/",
+        "moduleNameMapper": {
+            "^react$": "<rootDir>/../../node_modules/react",
+            "^react-test-renderer$": "<rootDir>/../../node_modules/react-test-renderer",
+            "^react-dom$": "<rootDir>/../../node_modules/react-dom",
+            "^styled-components$": "<rootDir>/../../node_modules/styled-components"
+        }
     }
 }

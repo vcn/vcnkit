@@ -5,7 +5,7 @@ import { ThemeProvider } from '../../packages/theme/src';
 
 const Wrapper = styled.div`
     padding:          1rem;
-    background-color: ${ props => props.theme.colors.body };
+    background-color: ${ props => props.theme.colors?.body };
 `;
 
 const Theme = ({ dark, children }) => (
