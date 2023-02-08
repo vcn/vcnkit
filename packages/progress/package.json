@@ -1,6 +1,6 @@
 {
     "name": "@vcnkit/progress",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "description": "Progress indicators for VCNKit",
     "author": "VCN Verzekerings Combinatie Nederland B.V.",
     "repository": {
@@ -22,7 +22,7 @@
         "dist"
     ],
     "dependencies": {
-        "@vcnkit/theme": "^2.2.1",
+        "@vcnkit/theme": "^2.2.2",
         "prop-types": "^15.8.1"
     },
     "peerDependencies": {

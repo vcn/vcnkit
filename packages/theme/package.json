@@ -1,6 +1,6 @@
 {
     "name": "@vcnkit/theme",
-    "version": "2.2.1",
+    "version": "2.2.2",
     "description": "Provides a ThemeProvider and theming utilities to use with all VCNKit components",
     "author": "VCN Verzekerings Combinatie Nederland B.V.",
     "repository": {
