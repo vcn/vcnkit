@@ -1,6 +1,6 @@
 {
     "name": "@vcnkit/theme",
-    "version": "2.2.0",
+    "version": "2.2.1",
     "description": "Provides a ThemeProvider and theming utilities to use with all VCNKit components",
     "author": "VCN Verzekerings Combinatie Nederland B.V.",
     "repository": {
@@ -12,7 +12,7 @@
         "node": ">8.0.0"
     },
     "scripts": {
-        "build": "rimraf dist --ignore '*.test.js,*.spec.js'",
+        "build": "rimraf dist && babel ./src --out-dir ./dist --ignore '*.test.js,*.spec.js'",
         "clean": "rimraf dist",
         "test": "jest"
     },
@@ -42,9 +42,9 @@
             "^react-dom$": "<rootDir>/../../node_modules/react-dom",
             "^styled-components$": "<rootDir>/../../node_modules/styled-components",
             "^babel-plugin-styled-components$": "<rootDir>/../../node_modules/babel-plugin-styled-components",
-            "^shallowequal$":  "<rootDir>/../../node_modules/shallowequal",
-            "^stylis$":  "<rootDir>/../../node_modules/stylis",
-            "^tslib$":  "<rootDir>/../../node_modules/tslib",
+            "^shallowequal$": "<rootDir>/../../node_modules/shallowequal",
+            "^stylis$": "<rootDir>/../../node_modules/stylis",
+            "^tslib$": "<rootDir>/../../node_modules/tslib",
             "^jest-styled-components$": "<rootDir>/../../node_modules/jest-styled-components",
             "^jest$": "<rootDir>/../../node_modules/jest",
             "^jest-environment-jsdom$": "<rootDir>/../../node_modules/jest-environment-jsdom"

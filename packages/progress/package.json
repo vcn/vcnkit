@@ -1,6 +1,6 @@
 {
     "name": "@vcnkit/progress",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "Progress indicators for VCNKit",
     "author": "VCN Verzekerings Combinatie Nederland B.V.",
     "repository": {
@@ -12,7 +12,7 @@
         "node": ">8.0.0"
     },
     "scripts": {
-        "build": "rimraf dist --ignore '*.test.js,*.spec.js'",
+        "build": "rimraf dist && babel ./src --out-dir ./dist --ignore '*.test.js,*.spec.js'",
         "clean": "rimraf dist"
     },
     "license": "MIT",
@@ -22,8 +22,8 @@
         "dist"
     ],
     "dependencies": {
-        "prop-types": "^15.8.1",
-        "@vcnkit/theme": "*"
+        "@vcnkit/theme": "^2.2.1",
+        "prop-types": "^15.8.1"
     },
     "peerDependencies": {
         "react": "^18.2.0",

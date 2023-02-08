@@ -1,6 +1,6 @@
 {
     "name": "@vcnkit/expansionpanel",
-    "version": "0.4.0",
+    "version": "0.4.1",
     "description": "Essential elements for VCNKit",
     "author": "VCN Verzekerings Combinatie Nederland B.V.",
     "repository": {
@@ -12,7 +12,7 @@
         "node": ">8.0.0"
     },
     "scripts": {
-        "build": "rimraf dist -d dist --ignore '*.test.js,*.spec.js'",
+        "build": "rimraf dist && babel ./src --out-dir ./dist --ignore '*.test.js,*.spec.js'",
         "clean": "rimraf dist"
     },
     "license": "MIT",
@@ -22,8 +22,8 @@
         "dist"
     ],
     "dependencies": {
-        "@vcnkit/essentials": "^*",
-        "@vcnkit/theme": "^*",
+        "@vcnkit/essentials": "^0.2.1",
+        "@vcnkit/theme": "^2.2.1",
         "animated": "^0.2.2",
         "hoist-non-react-statics": "^3.3.2",
         "prop-types": "^15.8.1"
